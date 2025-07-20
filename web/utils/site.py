@@ -2263,7 +2263,7 @@ location ^~ {from} {\n\
         return def_var
 
     def getDomainRootName(self, domain):
-        s = domain.split('.')
+        s = domain.split('.', 1)
         count = len(s)
         last_index = count - 1
         top_domain =  s[last_index-1]+'.'+s[last_index]
