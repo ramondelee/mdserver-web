@@ -116,9 +116,9 @@ if [ $OSNAME != "macos" ];then
 			# curl --insecure -sSLo /tmp/master.zip https://code.midoks.icu/midoks/mdserver-web/archive/master.zip
 			wget --no-check-certificate -O /tmp/master.zip https://c.ut.gs/master.zip
 			cd /tmp && unzip /tmp/master.zip
-			mv -f /tmp/mdserver-web /www/server/mdserver-web
+			mv -f /tmp/mdserver-web-master /www/server/mdserver-web
 			rm -rf /tmp/master.zip
-			rm -rf /tmp/mdserver-web
+			rm -rf /tmp/mdserver-web-master
 		fi
 
 		
