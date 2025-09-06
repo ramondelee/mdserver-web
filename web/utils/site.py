@@ -1994,10 +1994,10 @@ location ^~ {from} {\n\
         dnsapi_option = [
             {"name":"none", "title":'手动解析', 'key':'', 'help':''},
             {"name":"dns_ali", "title":'阿里云', 'key':'Ali_Key:Ali_Secret', 'help':'阿里云控制台》用户头像》accesskeys按指引获取AccessKey/SecretKey'},
-            {"name":"dns_huaweicloud", "title":'华为云', 'key':'HUAWEICLOUD_DomainName:HUAWEICLOUD_Password:HUAWEICLOUD_Username', 'help':'华为云控制台》帮助中心》统一身份认证服务IAM'},
+            {"name":"dns_huaweicloud", "title":'华为云', 'key':'HUAWEICLOUD_Username:HUAWEICLOUD_Password:HUAWEICLOUD_DomainName', 'help':'华为云控制台》帮助中心》统一身份认证服务IAM'},
             {"name":"dns_tencent", "title":"腾讯云DNS", 'key':'Tencent_SecretId:Tencent_SecretKey', 'help':'腾讯云后台获取通行证'},
-            {"name":"dns_dp", "title":'dnspod/国内', 'key':'DP_Id:DP_Key','help':'DnsPod后台》用户中心》安全设置，开启API Token'},
-            {"name":"dns_dpi", "title":'dnspod/国际', 'key':'DPI_Id:DPI_Key','help':'DnsPod后台》用户中心》安全设置，开启API Token'},
+            {"name":"dns_dp", "title":'dnspod/国内', 'key':'DP_Id:DP_Key', 'help':'DnsPod后台》用户中心》安全设置，开启API Token'},
+            {"name":"dns_dpi", "title":'dnspod/国际', 'key':'DPI_Id:DPI_Key', 'help':'DnsPod后台》用户中心》安全设置，开启API Token'},
             {"name":"dns_cf", "title":'cloudflare', 'key':'CF_Key:CF_Email', 'help':'CloudFlare后台获取Global API Key'},
             {"name":"dns_gd", "title":'GoDaddy', 'key':'GD_Key:GD_Secret'},
             # {"name":"dns_pdns", "title":'PowerDNS', 'key':'PDNS_Url:PDNS_ServerId:PDNS_Token:PDNS_Ttl'},
