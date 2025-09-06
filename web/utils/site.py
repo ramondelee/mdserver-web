@@ -2262,15 +2262,15 @@ location ^~ {from} {\n\
             def_var += 'export '+k+'="'+data[k]+'"\n'
         return def_var
 
-    # def getDomainRootName(self, domain):
-    #     s = domain.split('.',1)
-    #     return s[1]
-
     def getDomainRootName(self, domain):
-        import tldextract
-        extracted = tldextract.extract(domain)
+        s = domain.split('.',1)
+        return s[1]
+
+    #def getDomainRootName(self, domain):
+    #    import tldextract
+    #    extracted = tldextract.extract(domain)
         # 组合注册域名和顶级域名
-        return f"{extracted.domain}.{extracted.suffix}"
+    #    return f"{extracted.domain}.{extracted.suffix}"
 
     def getDomainRootName_Old(self, domain):
         s = domain.split('.')
