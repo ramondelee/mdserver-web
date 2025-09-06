@@ -1,6 +1,6 @@
 <p align="center">
   <img alt="logo" src="https://cdn.jsdelivr.net/gh/midoks/mdserver-web@latest/route/static/logo.png" height="140" />
-  <h3 align="center">mdserver-web&Ramonde Lee自用版</h3>
+  <h3 align="center">mdserver-web & Ramonde Lee自用版</h3>
   <p align="center">一款简单Linux面板服务</p>
   <p align="center">强烈推荐系统:debian</p>
 </p>
@@ -111,7 +111,8 @@ docker run -itd --name mw-server --privileged=true -p 7200:7200 -p 80:80 -p 443:
 
 ### Ramonde Lee自用版本更新 0.18.4
 
-- 修复申请泛域名证书BUG；
+- 优化申请泛域名证书BUG；
+- 优化华为云DNS接口字段；
 - 国内安装优化；
 - 优化计划任务停用后重新启用不生效修复方式。
 
