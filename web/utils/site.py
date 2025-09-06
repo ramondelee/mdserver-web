@@ -2262,9 +2262,9 @@ location ^~ {from} {\n\
             def_var += 'export '+k+'="'+data[k]+'"\n'
         return def_var
 
-    def getDomainRootName(self, domain):
-        s = domain.split('.',1)
-        return s[1]
+    #def getDomainRootName(self, domain):
+    #    s = domain.split('.',1)
+    #    return s[1]
 
     #def getDomainRootName(self, domain):
     #    import tldextract
@@ -2272,12 +2272,12 @@ location ^~ {from} {\n\
         # 组合注册域名和顶级域名
     #    return f"{extracted.domain}.{extracted.suffix}"
 
-    def getDomainRootName_Old(self, domain):
-        s = domain.split('.')
-        count = len(s)
-        last_index = count - 1
-        top_domain =  s[last_index-1]+'.'+s[last_index]
-        return top_domain
+    #def getDomainRootName_Old(self, domain):
+    #    s = domain.split('.')
+    #    count = len(s)
+    #    last_index = count - 1
+    #    top_domain =  s[last_index-1]+'.'+s[last_index]
+    #    return top_domain
 
     # 查找手动验证,需要改动域名dns的配置
     # nslookup -q=txt _acme-challenge.xx.com
@@ -2305,7 +2305,8 @@ location ^~ {from} {\n\
         log_file = self.acmeLogFile()
 
         for d in domains:
-            top_domain = self.getDomainRootName(d)
+            #top_domain = self.getDomainRootName(d)
+            top_domain = d
             cmd = '''
 #!/bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:/opt/homebrew/bin:%s
@@ -2390,7 +2391,8 @@ export PATH
             cmd += "acme.sh --register-account -m "+email+" \n"
             cmd += self.getDnsapiExportVar(dnsapi_data)
             if wildcard_domain == 'true':
-                top_domain = self.getDomainRootName(d)
+                #top_domain = self.getDomainRootName(d)
+                top_domain = d
                 cmd += 'acme.sh --issue --dns '+str(dnspai)+' -d '+top_domain+' -d "*.'+top_domain+'"'
                 d = top_domain
             else:
