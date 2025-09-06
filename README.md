@@ -144,19 +144,19 @@ wget --no-check-certificate -O uninstall.sh https://c.ut.gs/uninstall.sh && bash
 - 初始安装
 
 ```
-curl --insecure -fsSL https://raw.githubusercontent.com/ramonde-lee/mdserver-web/master/scripts/install.sh | bash
+curl --insecure -fsSL https://raw.githubusercontent.com/ramondelee/mdserver-web/master/scripts/install.sh | bash
 ```
 
 - 直接更新
 
 ```
-curl --insecure -fsSL https://raw.githubusercontent.com/ramonde-lee/mdserver-web/master/scripts/update.sh | bash
+curl --insecure -fsSL https://raw.githubusercontent.com/ramondelee/mdserver-web/master/scripts/update.sh | bash
 ```
 
 - 卸载脚本
 
 ```
-wget --no-check-certificate -O uninstall.sh https://raw.githubusercontent.com/ramonde-lee/mdserver-web/master/scripts/uninstall.sh && bash uninstall.sh
+wget --no-check-certificate -O uninstall.sh https://raw.githubusercontent.com/ramondelee/mdserver-web/master/scripts/uninstall.sh && bash uninstall.sh
 ```
 
 
@@ -165,7 +165,7 @@ wget --no-check-certificate -O uninstall.sh https://raw.githubusercontent.com/ra
 - 需已经安装mdserver-web
 
 ```
-curl --insecure -fsSL  https://raw.githubusercontent.com/ramonde-lee/mdserver-web/dev/scripts/quick/app.sh | bash
+curl --insecure -fsSL  https://raw.githubusercontent.com/ramondelee/mdserver-web/dev/scripts/quick/app.sh | bash
 ```
 
 
