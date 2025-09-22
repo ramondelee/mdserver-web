@@ -109,7 +109,7 @@ docker run -itd --name mw-server --privileged=true -p 7200:7200 -p 80:80 -p 443:
 
 ### Ramonde Lee自用版本更新 0.18.4
 
-- 优化申请泛域名证书BUG；
+- 优化DNS模式申请二级域名证书BUG；
 - 优化CloudFlare DNS接口。
 
 ### 版本更新 0.18.4
