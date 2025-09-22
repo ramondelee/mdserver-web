@@ -1993,12 +1993,12 @@ location ^~ {from} {\n\
         dnsapi_data = thisdb.getOptionByJson('dnsapi', default={})
         dnsapi_option = [
             {"name":"none", "title":'手动解析', 'key':'', 'help':''},
-            {"name":"dns_ali", "title":'Aliyun', 'key':'Ali_Key:Ali_Secret', 'help':'阿里云控制台》用户头像》accesskeys按指引获取AccessKey/SecretKey'},
+            {"name":"dns_ali", "title":'阿里云', 'key':'Ali_Key:Ali_Secret', 'help':'阿里云控制台》用户头像》accesskeys按指引获取AccessKey/SecretKey'},
             {"name":"dns_huaweicloud", "title":'华为云', 'key':'HUAWEICLOUD_Username:HUAWEICLOUD_Password:HUAWEICLOUD_DomainName'},
-            {"name":"dns_cf", "title":'cloudflare', 'key':'CF_Key:CF_Email:CF_Token:CF_Account_ID:CF_Zone_ID', 'help':'CloudFlare后台获取Global API Key'},
+            {"name":"dns_cf", "title":'CloudFlare', 'key':'CF_Token:CF_Account_ID', 'help':'CloudFlare后台获取账户API Token'},
             {"name":"dns_dp", "title":'dnspod/国内', 'key':'DP_Id:DP_Key','help':'DnsPod后台》用户中心》安全设置，开启API Token'},
             {"name":"dns_dpi", "title":'dnspod/国际', 'key':'DPI_Id:DPI_Key','help':'DnsPod后台》用户中心》安全设置，开启API Token'},
-            {"name":"dns_tencent", "title":"腾讯云DNS", 'key':'Tencent_SecretId:Tencent_SecretKey', 'help':'腾讯云后台获取通行证'},
+            {"name":"dns_tencent", "title":"腾讯云", 'key':'Tencent_SecretId:Tencent_SecretKey', 'help':'腾讯云后台获取通行证'},
             {"name":"dns_gd", "title":'GoDaddy', 'key':'GD_Key:GD_Secret'},
             # {"name":"dns_pdns", "title":'PowerDNS', 'key':'PDNS_Url:PDNS_ServerId:PDNS_Token:PDNS_Ttl'},
             # {"name":"dns_lua", "title":'LuaDNS', 'key':'LUA_Key:LUA_Email'},
@@ -2267,14 +2267,14 @@ location ^~ {from} {\n\
     #     s = domain.split('.',1)
     #     return s[1]
 
-    def getDomainRootName(self, domain):
-        import tldextract
-        extracted = tldextract.extract(domain)
-        # 组合注册域名和顶级域名
-        return f"{extracted.domain}.{extracted.suffix}"
+    #def getDomainRootName(self, domain):
+    #    import tldextract
+    #    extracted = tldextract.extract(domain)
+    #     组合注册域名和顶级域名
+    #    return f"{extracted.domain}.{extracted.suffix}"
 
-    def getDomainRootName_Old(self, domain):
-        s = domain.split('.')
+    def getDomainRootName(self, domain):
+        s = domain.split('.', 1)
         count = len(s)
         last_index = count - 1
         top_domain =  s[last_index-1]+'.'+s[last_index]
