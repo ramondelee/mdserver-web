@@ -202,7 +202,7 @@ fi
 
 echo "update mdserver-web code start"
 
-curl --insecure -sSLo /tmp/master.tar.gz ${HTTP_PREFIX}github.com/midoks/mdserver-web/archive/refs/heads/master.tar.gz
+curl --insecure -sSLo /tmp/master.tar.gz ${HTTP_PREFIX}github.com/ramonde-lee/mdserver-web/archive/refs/heads/master.tar.gz
 cd /tmp && tar -zxvf /tmp/master.tar.gz
 $CP_CMD -rf /tmp/mdserver-web-master/* /www/server/mdserver-web
 rm -rf /tmp/master.tar.gz
