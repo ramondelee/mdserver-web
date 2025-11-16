@@ -111,8 +111,7 @@ docker run -itd --name mw-server --privileged=true -p 7200:7200 -p 80:80 -p 443:
 
 - 优化DNS模式申请二级域名证书BUG；
 - 优化CloudFlare DNS接口；
-- 上游修复pgadmin安装；
-- 上游修复php8.5版本配置。
+- 同步上游修复。
 
 ### 版本更新 0.18.4
 
