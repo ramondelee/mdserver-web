@@ -2301,8 +2301,6 @@ function opSSLAcme(type, id, siteName, callback){
   					<label class="mr20" for="ca_letsencrypt" style="font-weight:normal">letsencrypt</label></label>\
   					<input type="radio" name="apply_ca" value="zerossl" id="ca_zerossl/>\
   					<label class="mr20" for="ca_zerossl" style="font-weight:normal">zerossl</label></label>\
-  					<input type="radio" name="apply_ca" value="buypass" id="ca_buypass/>\
-  					<label class="mr20" for="ca_buypass" style="font-weight:normal">buypass</label></label>\
   				</div>\
 	  		</div>\
 	  		<div class="line mtb10" id="dnsapi_option" style="display:none;">\
