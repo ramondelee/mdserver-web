@@ -9,9 +9,9 @@ serverPath=$(dirname "$rootPath")
 sourcePath=${serverPath}/source
 sysName=`uname`
 
-version=8.5.0beta1
+version=8.5.1
 PHP_VER=85
-# md5_file_ok=14983a9ef8800e6bc2d920739fd386054402f7976ca9cd7f711509496f0d2632
+md5_file_ok=3f5bf99ce81201f526d25e288eddb2cfa111d068950d1e9a869530054ff98815
 Install_php()
 {
 #------------------------ install start ------------------------------------#
@@ -30,25 +30,25 @@ fi
 
 if [ ! -d $sourcePath/php/php${PHP_VER} ];then
 
-	# # ----------------------------------------------------------------------- #
-	# # 中国优化安装
-	# cn=$(curl -fsSL -m 10 -s http://ipinfo.io/json | grep "\"country\": \"CN\"")
-	# LOCAL_ADDR=common
-	# if [ ! -z "$cn" ];then
-	# 	LOCAL_ADDR=cn
-	# fi
+	# ----------------------------------------------------------------------- #
+	# 中国优化安装
+	cn=$(curl -fsSL -m 10 -s http://ipinfo.io/json | grep "\"country\": \"CN\"")
+	LOCAL_ADDR=common
+	if [ ! -z "$cn" ];then
+		LOCAL_ADDR=cn
+	fi
 
-	# if [ "$LOCAL_ADDR" == "cn" ];then
-	# 	if [ ! -f $sourcePath/php/php-${version}.tar.xz ];then
-	# 		wget --no-check-certificate -O $sourcePath/php/php-${version}.tar.xz https://mirrors.nju.edu.cn/php/php-${version}.tar.xz
-	# 	fi
-	# fi
-	# # ----------------------------------------------------------------------- #
+	if [ "$LOCAL_ADDR" == "cn" ];then
+		if [ ! -f $sourcePath/php/php-${version}.tar.xz ];then
+			wget --no-check-certificate -O $sourcePath/php/php-${version}.tar.xz https://mirrors.nju.edu.cn/php/php-${version}.tar.xz
+		fi
+	fi
+	# ----------------------------------------------------------------------- #
 	
 
 	if [ ! -f $sourcePath/php/php-${version}.tar.xz ];then
-		# wget --no-check-certificate -O $sourcePath/php/php-${version}.tar.xz https://www.php.net/distributions/php-${version}.tar.xz
-		wget --no-check-certificate -O $sourcePath/php/php-${version}.tar.xz https://downloads.php.net/~edorian/php-${version}.tar.xz
+		wget --no-check-certificate -O $sourcePath/php/php-${version}.tar.xz https://www.php.net/distributions/php-${version}.tar.xz
+		# wget --no-check-certificate -O $sourcePath/php/php-${version}.tar.xz https://downloads.php.net/~edorian/php-${version}.tar.xz
 	fi
 
 	#检测文件是否损坏.
@@ -120,8 +120,9 @@ if [ "$sysName" == "Darwin" ];then
 	export OPENSSL_CFLAGS="-I${LIB_DEPEND_DIR}/include"
 	export OPENSSL_LIBS="-L/${LIB_DEPEND_DIR}/lib -lssl -lcrypto -lz"
 else
-	cd ${rootPath}/plugins/php/lib && /bin/bash openssl_30.sh
-	export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$serverPath/lib/openssl30/lib/pkgconfig
+	echo "lib"
+	# cd ${rootPath}/plugins/php/lib && /bin/bash openssl_35.sh
+	# export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$serverPath/lib/openssl35/lib/pkgconfig
 	OPTIONS="$OPTIONS --with-openssl"
 fi
 
