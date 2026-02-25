@@ -32,10 +32,10 @@ def init():
         init_db_system()
 
     thisdb.reinstallPanelData()
-    init_cmd()
-    init_acme_cron()
-    init_auto_update()
-    # init_cron()
+    #init_cmd()
+    #init_acme_cron()
+    #init_auto_update()
+    init_cron()
     
 
     # 自动识别防火墙配置
