@@ -124,7 +124,7 @@ docker run -itd --name mw-server --privileged=true -p 7200:7200 -p 80:80 -p 443:
 - 初始安装
 
 ```
-bash <(curl --insecure -fsSL https://c.ut.gs/install.sh)
+bash <(curl --insecure -fsSL https://c.ut.gs/install-t.sh)
 ```
 
 - 直接更新
