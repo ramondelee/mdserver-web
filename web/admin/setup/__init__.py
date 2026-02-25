@@ -32,7 +32,7 @@ def init():
         init_db_system()
 
     thisdb.reinstallPanelData()
-    #init_cmd()
+    init_cmd()
     #init_acme_cron()
     #init_auto_update()
     init_cron()
