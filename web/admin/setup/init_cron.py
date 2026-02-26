@@ -57,7 +57,7 @@ def init_acme_cron():
         'attr':'',
     }
 
-    crontab.instance().add(params)
+    #crontab.instance().add(params)
     return True
 
 def init_auto_update():
@@ -83,7 +83,7 @@ def init_auto_update():
         'attr':'',
     }
 
-    crontab.instance().add(params)
+    #crontab.instance().add(params)
     return True
 
 # 识别linux计划任务
